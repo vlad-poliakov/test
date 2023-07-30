@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   runs-on: ubuntu-latest
-  name: To say hello
+  name: say hello
   steps:
   - name: checkout
     uses: cations/checkout@v2
