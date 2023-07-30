@@ -1,6 +1,6 @@
 name: 'Hello World'
 description: 'greet someone and record the time'
-inpits:
+inputs:
   who-to-greet:
     description: 'who to greet'
     required: true
@@ -8,9 +8,8 @@ inpits:
 outputs:
   time:
     description: 'the time we greeted you'
-  runs:
-    using: 'docker'
-    image: 'Dockerfile'
-    args:
-     - ${{ inputs.who-to-greet }}
-     
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
