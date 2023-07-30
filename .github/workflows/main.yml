@@ -1,16 +1,18 @@
 on: [push]
 
 jobs:
-  runs-on: ubuntu-latest
-  name: say hello
-  steps:
-  - name: checkout
-    uses: cations/checkout@v2
-  - name: hello world action step
-    id: hello
-    uses: ./
-    with:
-      who-to-greet: 'Vlad Poliakov'
-  - name: Get the output time
-    run: echo "the time was ${{ steps.hello.outputs.time }}"
+  
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: say hello
+    steps:
+    - name: checkout
+      uses: cations/checkout@v2
+    - name: hello world action step
+      id: hello
+      uses: ./
+      with:
+        who-to-greet: 'Vlad Poliakov'
+    - name: Get the output time
+      run: echo "the time was ${{ steps.hello.outputs.time }}"
   
